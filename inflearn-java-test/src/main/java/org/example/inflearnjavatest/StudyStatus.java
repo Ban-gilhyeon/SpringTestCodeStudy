@@ -1,4 +1,5 @@
 package org.example.inflearnjavatest;
 
-public class StudyStatus {
+public enum StudyStatus {
+	DRAFT, START, END
 }
