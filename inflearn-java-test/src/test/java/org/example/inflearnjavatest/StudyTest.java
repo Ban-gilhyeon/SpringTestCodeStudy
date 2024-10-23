@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import domain.Study;
+import domain.StudyStatus;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -33,9 +35,9 @@ class StudyTest {
 	@Test
 	@Order(1)
 	void create_new_Study() {
-		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Study(-10));
+		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Study(-10,"test1"));
 		assertEquals("스터디 최대 참석자는 0보다 커야 합니다.",exception.getMessage());
-		Study study = new Study(value++);
+		Study study = new Study(value++, "test");
 		/*assertNotNull(study);
 		assertEquals(StudyStatus.DRAFT, study.getStatus(), "스터디를 처음 만들면 상태 값이 DRAFT여야 함");
 		assertTrue(study.getLimit() > 0, "스터디 최대 참석 인원은 0보다 커야 함");*/

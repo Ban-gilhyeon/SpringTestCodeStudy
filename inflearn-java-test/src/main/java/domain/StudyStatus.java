@@ -1,5 +1,5 @@
-package org.example.inflearnjavatest;
+package domain;
 
 public enum StudyStatus {
-	DRAFT, START, END
+	DRAFT, START, END, OPENED
 }
